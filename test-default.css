@@ -1,9 +1,147 @@
+/* 폰트 */
+@font-face {
+	font-family: 'LotteMartDream';
+	font-style: normal;
+	font-weight: 400;
+	src:
+		url('https://cdn.jsdelivr.net/korean-webfonts/1/corps/lottemart/LotteMartDream/LotteMartDreamMedium.woff2')
+		format('woff2'),
+		url('https://cdn.jsdelivr.net/korean-webfonts/1/corps/lottemart/LotteMartDream/LotteMartDreamMedium.woff')
+		format('woff');
+}
+
+@font-face {
+	font-family: 'LotteMartDream';
+	font-style: normal;
+	font-weight: 700;
+	src:
+		url('https://cdn.jsdelivr.net/korean-webfonts/1/corps/lottemart/LotteMartDream/LotteMartDreamBold.woff2')
+		format('woff2'),
+		url('https://cdn.jsdelivr.net/korean-webfonts/1/corps/lottemart/LotteMartDream/LotteMartDreamBold.woff')
+		format('woff');
+}
+
+@font-face {
+	font-family: 'LotteMartDream';
+	font-style: normal;
+	font-weight: 300;
+	src:
+		url('https://cdn.jsdelivr.net/korean-webfonts/1/corps/lottemart/LotteMartDream/LotteMartDreamLight.woff2')
+		format('woff2'),
+		url('https://cdn.jsdelivr.net/korean-webfonts/1/corps/lottemart/LotteMartDream/LotteMartDreamLight.woff')
+		format('woff');
+}
+
+html, .tui-editor-contents {
+	font-family: 'LotteMartDream', sans-serif !important;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.clearfix:after {content:''; display: block; clear: both;}
+img {vertical-align: top;}
+
+/* TYPOGRAPHY */
+* {
+    -webkit-font-smoothing: antialiased;
+}
+body {
+    font: 16px/28px "Montserrat", sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: "Raleway", sans-serif;
+}
+
+.content_tt { font-size: 30px; font-weight: 600; color: #555; text-align: center;}
+.content_desc {font-size: 16px; font-weight: 300; color: #8c8c8c; width: 65%; margin: 23px auto 33px;}
+
+/* LAYOUT */
+.container { width: 1170px; margin: 0 auto;}
+
+
+/* COMMON ELEMONTS */
+.primary_color {
+
+}
+.btn {
+  background: #998675;
+  padding: 0 29px;
+  line-height:50px;
+  text-transform:uppercase;
+  font-weight:bold;
+  display:inline-block;
+  border-radius:3px;
+  color:#fff;
+  text-decoration:none;
+  position:relative;
+  box-shadow:inset 0 -3px #736357;
+}
+.btn:before {
+  content:''; position:absolute; background:#736357; border-radius:3px; bottom:0;
+}
+
 @import url(test-common.css);
 
 /* header */
 
-header {position: absolute; z-index: 999; left: 0; right: 0; padding: 40px 0;}
-header .logo {float: left;}
+header {  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  /* 스크롤 전 헤더 배경색 */
+  background:rgba(0,0,0,0);
+  z-index:1000;
+  /* 메뉴 영역 세로 사이즈 */
+  height:100px;
+  overflow:hidden;
+  line-height:100px;
+  -webkit-transition: height 0.3s;
+  -moz-transition: height 0.3s;
+  transition: height 0.3s;}
+header .logo {float: left; margin-top:21px; margin-left:40px;}
 header nav {float: right;}
 header nav ul {float: left;}
 header nav ul li {float: left;}
@@ -18,8 +156,32 @@ header nav ul li a:hover, header nav ul li a.active{
     color: #c7b299;
 }
 
-header .logo a{width: 171px; height: 56px; background: url(../images/top_logo_white.png) no-repeat;
+header .logo a{width: 171px; height: 56px; background: url(https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fbf7ugG%2FbtqT6Ie7oGe%2FS3g5dflgWaUONth84FJe40%2Fimg.png) no-repeat;
 display: block; text-indent: -9999em;}
+
+.header.roll {
+  /* 스크롤 후 헤더 사이즈(세로) */
+  height: 90px;
+  line-height:90px;
+  /* 스크롤 후 헤더 배경색 */
+  background-color:#000000;
+}
+
+.header .navi {
+  /* 메뉴 영역 가로 사이즈 */
+  width:1200px;
+  margin:0 auto;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.header .roll .navi {
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
 
 .toggle {display: none;}
 
@@ -146,7 +308,7 @@ text-align: center; padding-top: 116px; opacity: 0; transition: 0.4s;}
 .load_more {text-align: center; margin-top: 40px;}
 
 /* VIDEO */
-.video {background: url(../images/video_bg.jpg) no-repeat center center/cover; height: 705px; position: relative;}
+.video {background: url(https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcM2lNr%2FbtqUhATEWph%2FH5QHyGrFWfOdvYG9vkV2lK%2Fimg.jpg) no-repeat center center/cover; height: 705px; position: relative;}
 .video .contents {position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); text-align: center; color: #fff;}
 
 .video .contents * { color: #fff;}
@@ -172,7 +334,7 @@ text-align: center; padding-top: 116px; opacity: 0; transition: 0.4s;}
 
 .excellent_mobile .contents ul {margin-left: 50px;}
 .excellent_mobile .contents ul li {font-size: 16px; font-weight: 300; color: #8c8c8c; margin-bottom: 7px;}
-.excellent_mobile .contents ul li span{width: 21px; height: 21px; background: url(../images/sprites.png) no-repeat -402px -89px;
+.excellent_mobile .contents ul li span{width: 21px; height: 21px; background: url(https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FAqRqU%2FbtqUfZe4L48%2Fr8QkcarcBSRFnaYE45XBRk%2Fimg.png) no-repeat -402px -89px;
      display: inline-block; text-indent: -9999em; margin-right: 28px;  vertical-align: middle;}
 
 
@@ -188,9 +350,9 @@ footer p {color: #555; font-size: 14px;}
 .footer_bottom p span {color: #959595;}
 .footer_bottom p .devider {margin: 0 8px;}
 
-.footer_bottom .footer_logo a {width : 171px; height: 56px; background: url(../images/top_logo_white.png) no-repeat;}
+.footer_bottom .footer_logo a {width : 171px; height: 56px; background: url(https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fbf7ugG%2FbtqT6Ie7oGe%2FS3g5dflgWaUONth84FJe40%2Fimg.png) no-repeat;}
 
-header .logo a{width: 171px; height: 56px; background: url(../images/top_logo_white.png) no-repeat;
+header .logo a{width: 171px; height: 56px; background: url(https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fbf7ugG%2FbtqT6Ie7oGe%2FS3g5dflgWaUONth84FJe40%2Fimg.png) no-repeat;
     display: block; text-indent: -9999em;}
 /* RESPONSIVE */
 @media screen and (max-width:768px) {
@@ -198,12 +360,12 @@ header .logo a{width: 171px; height: 56px; background: url(../images/top_logo_wh
     header {position: static; top: 0; background: #fff; padding: 20px 0 0;  box-shadow: 0 3px 3px rgba(0,0,0,.3);}
     .toggle {display: block; position: absolute; top: 20px; right: 15px; line-height: 56px;}
     header .container {padding: 0;}
-    header .logo a {background-image: url(../images/top_logo_black.png);}
+    header .logo a {background-image: url(https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbeHqO0%2FbtqT9153HOb%2FeqnPJwYK6BZKcYE9AkdTvK%2Fimg.png);}
     .top-icons li:last-child {display: none;}
     .top-icons li a {color: #555;}
     header nav {float: none; background: #111; padding: 0 15px;}
     header nav ul {float:none;}
-    header .logo {float:none; padding-bottom: 20px; margin-left: 15px;}
+    header .logo {float:none; padding-bottom: 20px; margin-left: 15px; margin-top:9px;}
     .main-menu {display: none;}
     .main-menu li {float: none; border-bottom: 1px solid #252525;}
     .top-icons {position: absolute; top: 20px; right: 30px;}

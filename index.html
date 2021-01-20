@@ -69,8 +69,8 @@
   </head>
   
   <body>
-    <header>
-      <div class="container clearfix">
+    <header class="header">
+      <div class="container clearfix navi">
         <h1 class="logo"><a href="">Clean&Code logo</a></h1>
         <nav class="clearfix">
           <ul class="main-menu">
@@ -88,13 +88,31 @@
         </nav>
       </div>
     </header>
+    
+    <script>
+	$(function(){
+	 var rollHeader = 100;
+	  $(window).scroll(function() {
+		var scroll = getCurrentScroll();
+		  if ( scroll >= rollHeader ) {
+			   $('.header').addClass('roll');
+			}
+			else {
+				$('.header').removeClass('roll');
+			}
+	  });
+	function getCurrentScroll() {
+		return window.pageYOffset || document.documentElement.scrollTop;
+		}
+	});
+	</script>
 
     <div class="slideshow-container">
 
       <!-- Full-width images with number and caption text -->
       <div class="mySlides fade">
-        <div class="numbertext">1 / 6</div>
-        <img src="images/mainslide_01.jpg" style="width:100%">
+        <div class="numbertext"></div>
+        <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbsdX6Q%2FbtqUejZsFxq%2F8CDkdGU9F3vEGQuug4S2wk%2Fimg.jpg" style="width:100%">
         <div class="text">
           <h3>Study of java</h3>
           <h2>Java</h2>
@@ -104,8 +122,8 @@
       </div>
 
       <div class="mySlides fade">
-        <div class="numbertext">2 / 6</div>
-        <img src="images/mainslide_02.jpg" style="width:100%">
+        <div class="numbertext"></div>
+        <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FExqWG%2FbtqUeiM0zfA%2Fm1Spp9aLPOk0CyVR6Yogg0%2Fimg.jpg" style="width:100%">
         <div class="text">
           <h3>Study of MySQL RDBMS</h3>
           <h2>MySQL</h2>
@@ -115,8 +133,8 @@
       </div>
 
       <div class="mySlides fade">
-        <div class="numbertext">3 / 6</div>
-        <img src="images/mainslide_03.jpg" style="width:100%">
+        <div class="numbertext"></div>
+        <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbBfdcg%2FbtqT90ziPjy%2FE7w8j3aJA4o6uzqybrgxG0%2Fimg.jpg" style="width:100%">
         <div class="text">
           <h3>Study of jquery</h3>
           <h2>jquery</h2>
@@ -216,7 +234,7 @@
             모두 多 Clean Code 라는 사실
           </h3>
           <p class="content_desc">Clean Code는 그저 공간일 뿐이에요. 그 공간에 무슨일이 일어날지는 아무도 상상할 수 없죠.</p>
-          <img src="images/project_06.jpg" alt="idear">
+          <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FdmRrxc%2FbtqT91yem9t%2Fkm6fBZjLVM8pUTQ1kBEtmK%2Fimg.png" alt="idear">
         </div>
       </section><!--//realization-->
       
@@ -356,7 +374,7 @@
       
       <section class="excellent_mobile">
         <div class="container clearfix">
-          <img src="images/excellent_mobile22.png" alt="excellent mobile">
+          <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbxRNPj%2FbtqT6IzqifW%2FqQPcrZtQMLWlfsk1dVvtB1%2Fimg.png" alt="excellent mobile">
           <div class="contents">
             <h3 class="content_tt">Thank you, See you bro~🤗</h3>
             <p class="content_desc">나는 Java를 주 언어로 사용하고 있고, 다른 언어도 꾸준히 배워볼 생각이 있어. 만나서 반가워 :) <br>
