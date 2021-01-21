@@ -2,96 +2,218 @@
 <html lang="en">
 <head>
 <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-0ZKK26G6HW"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JJ0CQVRGV4"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'G-0ZKK26G6HW');
+  gtag('config', 'G-JJ0CQVRGV4');
 </script>
 <meta charset="UTF-8" />
-<title>명언</title>
+
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=1200">
+<meta name="apple-mobile-web-app-title" content="Clean Code" />
+<!-- 메타태그정보 //-->
+<!-- META -->
+<link rel="canonical" href="https://ssg.yadah.kr" />
+<meta name="subject" content="4강 자바 들여쓰기(indentation) 규칙 권장안"/>
+<meta name="title" content="Clean Code" />
+<meta name="keywords" content="HTML, CSS, JAVASCRIPT, JAVA, SPRING, MySQL, 리눅스, 리액트" />
+<meta name="copyright" content="Clean Code" />
+<meta name="pubdate" content="2021-01-22T03:28:28" />
+<meta name="lastmod" content="2021-01-22T03:28:28" />
+<!-- OPENGRAPH -->
+<meta property="og:site_name" content="Clean Code" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="4강 자바 들여쓰기(indentation) 규칙 권장안" />
+<meta property="og:description" content=" 들여쓰기indentation 규칙 권장안
+
+ 들여쓰기
+들여쓰기는 문맥이 깊어지거나 이어주는 아랫 줄이 윗 줄보다 얼만큼 안쪽으로 들여쓰여질 것을 나타낸다
+ 
+
+ 오라클사의 자바 들여쓰기 관례
+들여쓰기는 4자리로 한다
+탭 문자의 표시 탭 문자는 8개4개가 아닌 공백 문자 단위로 화면에 표시되어야 한다
+탭 문자의 생성 소스 코드 작성시에 탭 문자를 사용할 지 공백 문자를 사용할지는 정해져 있지 않다
+ 
+ 들여쓰기의 크기 4자리
+자바 C C C 등의 언어에서는 일반적으로 4자리 들여쓰기가 기본이며 오라클 사의 자바 들여쓰기 관례 문서에서도 4자리이다 4자리 들여쓰기는 문장의 논리적 포함 관계를 눈에 쉽게 띄게 해주면서도 8자리 띄어쓰기 방식에 비해 들여쓰기가 너무 깊어지는 것을 방지해주기 때문이다
+HTML XML의 경우에는 일반적으로 2자리 띄어쓰기가 기본이다 요소의 논리적 포함 단계가 종종 많아지기 때문에 4자리 들여쓰기로는 들여쓰기가 너무 깊어지기 때문이다
+
+
+ 탭 문자의 처리
+
+ 탭 문자 사용 금지
+
+탭 문자를 사용하지 않고 대신 공백 문자를 사용한다
+탭 문자가 화면에 표시되는 크기가 편집기 및 도구 그리고 그 설정마다 달라질 수 있어서 화면상으로 보기에는 들여쓰기가 바르게 되어 있는 소스 코드가 다른 편집기 도구 다른 사용자에게는 엉망으로 보여질 수 있기 때문이다 특히 탭과 공백 문자가 임의의 섞여 있는 소스 코드는 작성자의 사용 환경과 탭 문자의 해석을 달리 하는 사용 환경에서 소스 코드의 가독성을 크게 떨어뜨리기 때문이다
+이 때문에 많은 자바 프로젝트의 코드 관례에서 탭 문자를 사용하지 말고 대신 공백 문자를 사용하도록 하고 있다
+ 
+ 탭 문자의 화면 표시 크기
+
+탭 문자는 8개 공백 문자로 표시되는 것이 사실상의 표준이 되어 왔으며 간단한 텍스트 편집기 등에서는 대개의 경우 8개 공백 문자로 표시하므로 8개 문자 표시로 설정해주는 것이 좋다 프로젝트에서 탭 문자를 사용하지 않더라도 프로젝트 외부에서 작성된 소스 코드는 탭 문자가 사용되었을 수 있기 때문이다
+그러나 프로젝트 외부에서 작성된 소스 코드는 탭 문자로 인하여 가독성이 크게 떨어지는 경우 탭 문자 크기를 적절히 변경 설정하여 사용한다
+
+
+ IDE의 자동 들여쓰기 기능 및 설정 방법
+
+ 이클립스
+들여쓰기를 4자리로 설정 메뉴에서 PreferencesJavaCode StyleFormatterEditIndentationIndentation size를 4로 설정한다
+탭 문자 사용 금지공백 문자 사용 설정 메뉴에서 PreferencesJavaCode StyleFormatterEditIndentationTab policy를 Spaces only로 설정한다
+탭 문자 표시 크기를 8로 설정 메뉴에서 PreferencesJavaCode StyleFormatterEditIndentationTab size를 8로 설정한다
+다음행 자동 들여쓰기 리턴 키를 입력하면 다음 행의 문맥에 따라 적절히 들여쓰기한 위치로 커서를 이동시켜준다
+소스 파일 전체 자동 들여쓰기 자바 소스 코드 편집기의 팝업 메뉴에서 SourceFormat을 선택하면 소스 파일 전체 혹은 선택된 블럭에 대하여 자동 들여쓰기를 해준다
+
+ 이맥스
+들여쓰기를 4자리로 설정 자바 모드의 기본 설정이다
+탭 문자 사용 금지공백 문자 사용 설정 defaultel 파일에 setqdefault indenttabsmode nil을 추가한다
+탭 문자 표시 크기를 8로 설정 기본 설정이다
+소스 파일 전체 자동 들여쓰기 Cx h CM 키를 입력하면 소스 파일 전체를 자동 들여쓰기 해준다
+" />
+<meta property="og:locale" content="ko_KR" />
+<meta property="og:image" content="https://ssg.yadah.kr/images/logo_opengraph.png" />
+<meta property="og:image:alt" content="ssg.yadah.kr" />
+<meta property="og:image:width" content="486" />
+<meta property="og:image:height" content="324" />
+<meta property="og:updated_time" content="2021-01-22T03:28:28"/>
+<meta property="og:pubdate" content="2021-01-22T03:28:28" />
+<meta property="og:url" content="https://ssg.yadah.kr" />
+<!-- TWITTER -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="4강 자바 들여쓰기(indentation) 규칙 권장안" />
+<meta name="twitter:site" content="@Clean Code" />
+<meta name="twitter:creator" content="@Clean Code" />
+<meta name="twitter:image" content="/images/logo_opengraph.png">
+<meta name="twitter:description" content=" 들여쓰기indentation 규칙 권장안
+
+ 들여쓰기
+들여쓰기는 문맥이 깊어지거나 이어주는 아랫 줄이 윗 줄보다 얼만큼 안쪽으로 들여쓰여질 것을 나타낸다
+ 
+
+ 오라클사의 자바 들여쓰기 관례
+들여쓰기는 4자리로 한다
+탭 문자의 표시 탭 문자는 8개4개가 아닌 공백 문자 단위로 화면에 표시되어야 한다
+탭 문자의 생성 소스 코드 작성시에 탭 문자를 사용할 지 공백 문자를 사용할지는 정해져 있지 않다
+ 
+ 들여쓰기의 크기 4자리
+자바 C C C 등의 언어에서는 일반적으로 4자리 들여쓰기가 기본이며 오라클 사의 자바 들여쓰기 관례 문서에서도 4자리이다 4자리 들여쓰기는 문장의 논리적 포함 관계를 눈에 쉽게 띄게 해주면서도 8자리 띄어쓰기 방식에 비해 들여쓰기가 너무 깊어지는 것을 방지해주기 때문이다
+HTML XML의 경우에는 일반적으로 2자리 띄어쓰기가 기본이다 요소의 논리적 포함 단계가 종종 많아지기 때문에 4자리 들여쓰기로는 들여쓰기가 너무 깊어지기 때문이다
+
+
+ 탭 문자의 처리
+
+ 탭 문자 사용 금지
+
+탭 문자를 사용하지 않고 대신 공백 문자를 사용한다
+탭 문자가 화면에 표시되는 크기가 편집기 및 도구 그리고 그 설정마다 달라질 수 있어서 화면상으로 보기에는 들여쓰기가 바르게 되어 있는 소스 코드가 다른 편집기 도구 다른 사용자에게는 엉망으로 보여질 수 있기 때문이다 특히 탭과 공백 문자가 임의의 섞여 있는 소스 코드는 작성자의 사용 환경과 탭 문자의 해석을 달리 하는 사용 환경에서 소스 코드의 가독성을 크게 떨어뜨리기 때문이다
+이 때문에 많은 자바 프로젝트의 코드 관례에서 탭 문자를 사용하지 말고 대신 공백 문자를 사용하도록 하고 있다
+ 
+ 탭 문자의 화면 표시 크기
+
+탭 문자는 8개 공백 문자로 표시되는 것이 사실상의 표준이 되어 왔으며 간단한 텍스트 편집기 등에서는 대개의 경우 8개 공백 문자로 표시하므로 8개 문자 표시로 설정해주는 것이 좋다 프로젝트에서 탭 문자를 사용하지 않더라도 프로젝트 외부에서 작성된 소스 코드는 탭 문자가 사용되었을 수 있기 때문이다
+그러나 프로젝트 외부에서 작성된 소스 코드는 탭 문자로 인하여 가독성이 크게 떨어지는 경우 탭 문자 크기를 적절히 변경 설정하여 사용한다
+
+
+ IDE의 자동 들여쓰기 기능 및 설정 방법
+
+ 이클립스
+들여쓰기를 4자리로 설정 메뉴에서 PreferencesJavaCode StyleFormatterEditIndentationIndentation size를 4로 설정한다
+탭 문자 사용 금지공백 문자 사용 설정 메뉴에서 PreferencesJavaCode StyleFormatterEditIndentationTab policy를 Spaces only로 설정한다
+탭 문자 표시 크기를 8로 설정 메뉴에서 PreferencesJavaCode StyleFormatterEditIndentationTab size를 8로 설정한다
+다음행 자동 들여쓰기 리턴 키를 입력하면 다음 행의 문맥에 따라 적절히 들여쓰기한 위치로 커서를 이동시켜준다
+소스 파일 전체 자동 들여쓰기 자바 소스 코드 편집기의 팝업 메뉴에서 SourceFormat을 선택하면 소스 파일 전체 혹은 선택된 블럭에 대하여 자동 들여쓰기를 해준다
+
+ 이맥스
+들여쓰기를 4자리로 설정 자바 모드의 기본 설정이다
+탭 문자 사용 금지공백 문자 사용 설정 defaultel 파일에 setqdefault indenttabsmode nil을 추가한다
+탭 문자 표시 크기를 8로 설정 기본 설정이다
+소스 파일 전체 자동 들여쓰기 Cx h CM 키를 입력하면 소스 파일 전체를 자동 들여쓰기 해준다
+" />
+<!-- GOOGLE+ -->
+<meta itemprop="headline" content="Clean Code" />
+<meta itemprop="name" content="Clean Code" />
+<meta itemprop="description" content=" 들여쓰기indentation 규칙 권장안
+
+ 들여쓰기
+들여쓰기는 문맥이 깊어지거나 이어주는 아랫 줄이 윗 줄보다 얼만큼 안쪽으로 들여쓰여질 것을 나타낸다
+ 
+
+ 오라클사의 자바 들여쓰기 관례
+들여쓰기는 4자리로 한다
+탭 문자의 표시 탭 문자는 8개4개가 아닌 공백 문자 단위로 화면에 표시되어야 한다
+탭 문자의 생성 소스 코드 작성시에 탭 문자를 사용할 지 공백 문자를 사용할지는 정해져 있지 않다
+ 
+ 들여쓰기의 크기 4자리
+자바 C C C 등의 언어에서는 일반적으로 4자리 들여쓰기가 기본이며 오라클 사의 자바 들여쓰기 관례 문서에서도 4자리이다 4자리 들여쓰기는 문장의 논리적 포함 관계를 눈에 쉽게 띄게 해주면서도 8자리 띄어쓰기 방식에 비해 들여쓰기가 너무 깊어지는 것을 방지해주기 때문이다
+HTML XML의 경우에는 일반적으로 2자리 띄어쓰기가 기본이다 요소의 논리적 포함 단계가 종종 많아지기 때문에 4자리 들여쓰기로는 들여쓰기가 너무 깊어지기 때문이다
+
+
+ 탭 문자의 처리
+
+ 탭 문자 사용 금지
+
+탭 문자를 사용하지 않고 대신 공백 문자를 사용한다
+탭 문자가 화면에 표시되는 크기가 편집기 및 도구 그리고 그 설정마다 달라질 수 있어서 화면상으로 보기에는 들여쓰기가 바르게 되어 있는 소스 코드가 다른 편집기 도구 다른 사용자에게는 엉망으로 보여질 수 있기 때문이다 특히 탭과 공백 문자가 임의의 섞여 있는 소스 코드는 작성자의 사용 환경과 탭 문자의 해석을 달리 하는 사용 환경에서 소스 코드의 가독성을 크게 떨어뜨리기 때문이다
+이 때문에 많은 자바 프로젝트의 코드 관례에서 탭 문자를 사용하지 말고 대신 공백 문자를 사용하도록 하고 있다
+ 
+ 탭 문자의 화면 표시 크기
+
+탭 문자는 8개 공백 문자로 표시되는 것이 사실상의 표준이 되어 왔으며 간단한 텍스트 편집기 등에서는 대개의 경우 8개 공백 문자로 표시하므로 8개 문자 표시로 설정해주는 것이 좋다 프로젝트에서 탭 문자를 사용하지 않더라도 프로젝트 외부에서 작성된 소스 코드는 탭 문자가 사용되었을 수 있기 때문이다
+그러나 프로젝트 외부에서 작성된 소스 코드는 탭 문자로 인하여 가독성이 크게 떨어지는 경우 탭 문자 크기를 적절히 변경 설정하여 사용한다
+
+
+ IDE의 자동 들여쓰기 기능 및 설정 방법
+
+ 이클립스
+들여쓰기를 4자리로 설정 메뉴에서 PreferencesJavaCode StyleFormatterEditIndentationIndentation size를 4로 설정한다
+탭 문자 사용 금지공백 문자 사용 설정 메뉴에서 PreferencesJavaCode StyleFormatterEditIndentationTab policy를 Spaces only로 설정한다
+탭 문자 표시 크기를 8로 설정 메뉴에서 PreferencesJavaCode StyleFormatterEditIndentationTab size를 8로 설정한다
+다음행 자동 들여쓰기 리턴 키를 입력하면 다음 행의 문맥에 따라 적절히 들여쓰기한 위치로 커서를 이동시켜준다
+소스 파일 전체 자동 들여쓰기 자바 소스 코드 편집기의 팝업 메뉴에서 SourceFormat을 선택하면 소스 파일 전체 혹은 선택된 블럭에 대하여 자동 들여쓰기를 해준다
+
+ 이맥스
+들여쓰기를 4자리로 설정 자바 모드의 기본 설정이다
+탭 문자 사용 금지공백 문자 사용 설정 defaultel 파일에 setqdefault indenttabsmode nil을 추가한다
+탭 문자 표시 크기를 8로 설정 기본 설정이다
+소스 파일 전체 자동 들여쓰기 Cx h CM 키를 입력하면 소스 파일 전체를 자동 들여쓰기 해준다
+" />
+<meta itemprop="image" content="/images/logo_opengraph.png" />
+
+<title>4강 자바 들여쓰기(indentation) 규칙 권장안 | Clean Code | ARTICLE DETAIL</title>
+
 <!-- 폰트어썸 불러오기 -->
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-<link rel="stylesheet" href="app.css" />
-<meta name="google-site-verification" content="t3fJ_s48enVhY6TkAiBwCozBIML2ZHJfLrih_424Mmw" />
-</head>
-<body>
-	<div class="body-content min-height-100vh flex flex-column">
-		<!-- 로고바 시작 -->
-		<header class="logo-bar con-min-width">
-			<div class="con height-100p flex flex-jc-c">
-				<a href="#" class="logo flex flex-ai-c">
-					<i class="fab fa-jenkins"></i>
-					<span>
-						Develo<span>p</span>ers
-					</span>
-				</a>
-			</div>
-		</header>
-		<!-- 로고바 끝 -->
 
-		<!-- 메뉴바 시작 -->
-		<header class="menu-bar con-min-width">
-			<div class="con height-100p">
-				<nav class="menu-bar__menu-1">
-					<ul class="flex">
-						<li>
-							<a href="./" class="block">
-								<i class="fas fa-home"></i>
-								<span>HOME</span>
-							</a>
-						</li>
-						<li>
-							<a class="block">
-								<i class="fas fa-list"></i>
-								<span>ARTICLES</span>
-							</a>
-							<ul>
-								<li><a href="article_list_JAVA_1.html" class="block"><i class="fab fa-java"></i> <span>JAVA LIST</span></a></li>
-							</ul>
-						</li>
-						<li>
-							<a class="block">
-								<i class="fas fa-link"></i>
-								<span>LINK</span>
-							</a>
-							<ul>
-								<li>
-									<a href="https://jhs512.github.io/blog/" target="_blank"
-										class="block">
-										<i class="fab fa-blogger-b"></i>
-										<span>BLOG</span>
-									</a>
-								</li>
-								<li>
-									<a href="https://github.com/" target="_blank" class="block">
-										<i class="fab fa-github"></i>
-										<span>GITHUB</span>
-									</a>
-								</li>
-							</ul>
-						</li>
-						<li>
-							<a href="stat.html" class="block">
-								<i class="fas fa-chart-pie"></i>
-								<span>STATISTICS</span>
-							</a>
-						</li>
-					</ul>
-				</nav>
-			</div>
-		</header>
-		<!-- 메뉴바 끝 -->
+<!-- <meta name="google-site-verification" content="kBMgTjO9loCuIJUFRTfJvTKiT6ojjWL_x_lpxGtM-6c" /> -->
 
-		<main class="flex-grow-1">
-			<section class="title-bar con-min-width">
-				<h1 class="con">
-					<i class="fas fa-file-alt"></i> <span>ARTICLE DETAIL</span>
-				</h1>
-			</section><!-- 하이라이트 라이브러리 추가, 토스트 UI 에디터에서 사용됨 -->
+<link rel="icon" href="favicon.svg"/>
+
+<!-- 제이쿼리 불러오기 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- WebFont -->
+<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+<script defer>
+    WebFont.load({
+        google: {
+          families: ['Montserrat:300,400,700', 'Raleway:300,400,500,600,700,800']
+        }
+    });
+</script>
+    
+<!-- JQUERY 불러오기 -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script src="https://malsup.github.com/jquery.cycle2.js"></script>
+<script src="https://malsup.github.io/jquery.cycle2.carousel.js"></script>
+<script defer>$.fn.cycle.defaults.autoSelector = '.cycle-slideshow';</script>
+<script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+
+
+<!-- 하이라이트 라이브러리 추가, 토스트 UI 에디터에서 사용됨 -->
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.4.1/highlight.min.js"></script>
 <link rel="stylesheet"
@@ -99,7 +221,7 @@
 
 <!-- 토스트 UI 에디터, 자바스크립트 코어 -->
 <script
-	src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"></script>
+	src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js" defer></script>
 
 <!-- 코드 미러 라이브러리 추가, 토스트 UI 에디터에서 사용됨 -->
 <link rel="stylesheet"
@@ -110,20 +232,75 @@
 
 <!-- 토스트 UI 에디터, 신택스 하이라이트 플러그인 추가 -->
 <script
-	src="https://uicdn.toast.com/editor-plugin-code-syntax-highlight/latest/toastui-editor-plugin-code-syntax-highlight.min.js"></script>
+	src="https://uicdn.toast.com/editor-plugin-code-syntax-highlight/latest/toastui-editor-plugin-code-syntax-highlight.min.js" defer></script>
 
-<section class="section-1 con-min-width">
+<link rel="stylesheet" href="app.css" />
+<script src="app.js" defer></script>
+
+</head>
+<body>
+	<div class="body-content min-height-100vh flex flex-column">
+        <header class="header">
+	      <div class="container clearfix navi">
+	        <h1 class="logo"><a href="">Clean&Code logo</a></h1>
+	        <nav class="clearfix">
+	          <ul class="main-menu">
+	            <li><a href="https://ssg.yadah.kr" class="active">Home</a></li>
+	            <li><a href="article_list_JAVA_1.html">Articles</a></li>
+	            <li><a href="https://david95j2.tistory.com/">Blog</a></li>
+	            <li><a href="https://github.com/david95j2">Github</a></li>
+	            <li><a href="">STATISTICS</a></li>
+	          </ul>
+	          <ul class="top-icons">
+	            <!--<li><a href=""><i class="fas fa-shopping-bag"></i></a></li>-->
+	            <li><a href=""><i class="fas fa-search"></i></a></li>
+	          </ul>
+	          <span class="toggle"><i class="fas fa-bars"></i></span>
+	        </nav>
+	      </div>
+	    </header>
+    
+	    <script>
+	      $(function() {
+	          var rollHeader = 100;
+	          $(window).scroll(function() {
+	              var scroll = getCurrentScroll();
+	              if (scroll >= rollHeader) {
+	                  $('.header').addClass('roll');
+	              } else {
+	                  $('.header').removeClass('roll');
+	              }
+	          });
+	
+	          function getCurrentScroll() {
+	              return window.pageYOffset || document.documentElement.scrollTop;
+	          }
+	      });
+	    </script>
+		<!-- 메뉴바 끝 -->
+
+		<main class="flex-grow-1 content">
+			<section class="serve-menu-bg"></section>
+			<section class="title-bar con-min-width">
+				<h1 class="con">
+					<i class="fas fa-file-alt"></i> <span>ARTICLE DETAIL</span>
+				</h1>
+			</section><section class="section-1 con-min-width">
 	<div class="con">
 		<div class="article-detail">
 			<h2 class="article-detail__title">4강 자바 들여쓰기(indentation) 규칙 권장안</h2>
 
 			<div class="article-detail__sub-info flex">
 				<div class="article-detail__board-name">JAVA</div>
-				<div class="article-detail__reg-date">2021-01-13 23:36:37</div>
+				<div class="article-detail__reg-date">2021-01-19 02:56:12</div>
 				<div class="article-detail__writer">이주영</div>
+				<div class="article-detail__hit-count">조회수 : 1</div>
+				<div class="article-detail__likes-count">추천수 : 0</div>
+				<div class="article-detail__comments-count">댓글수 : 2</div>
 			</div>
 
-			<div class="article-detail__body main-font"># 들여쓰기(indentation) 규칙 권장안
+			<script type="text/x-template">
+# 들여쓰기(indentation) 규칙 권장안
 
 ## 들여쓰기
 들여쓰기는 문맥이 깊어지거나 이어주는 아랫 줄이 윗 줄보다 얼만큼 안쪽으로 들여쓰여질 것을 나타낸다.
@@ -166,30 +343,38 @@ HTML, XML의 경우에는 일반적으로 2자리 띄어쓰기가 기본이다. 
 들여쓰기를 4자리로 설정: 자바 모드의 기본 설정이다.
 탭 문자 사용 금지(공백 문자 사용) 설정: default.el 파일에 "(setq-default indent-tabs-mode nil)"을 추가한다.
 탭 문자 표시 크기를 8로 설정: 기본 설정이다.
-소스 파일 전체 자동 들여쓰기: "C-x h C-M-\" 키를 입력하면, 소스 파일 전체를 자동 들여쓰기 해준다.</div>
+소스 파일 전체 자동 들여쓰기: "C-x h C-M-\" 키를 입력하면, 소스 파일 전체를 자동 들여쓰기 해준다.
+
+			</script>
+			<div class="article-detail__body main-font toast-ui-viewer"></div>
 
 			<div class="article-detail__reply-box">
 				<div id="disqus_thread"></div>
 				<script>
-				    (function() { // DON'T EDIT BELOW THIS LINE
-					    var d = document, s = d.createElement('script');
-					    s.src = 'https://my-ssg-blog.disqus.com/embed.js';
-					    s.setAttribute('data-timestamp', +new Date());
-					    (d.head || d.body).appendChild(s);
-				    })();
+					var disqus_config = function () {
+				        this.page.url = 'https://ssg.yadah.kr/article_detail_4.html';
+				        this.page.identifier = 'article_detail_4.html';
+				    };
+					(function() { // DON'T EDIT BELOW THIS LINE
+						var d = document, s = d.createElement('script');
+						s.src = 'https://my-ssg-1.disqus.com/embed.js';
+						s.setAttribute('data-timestamp', +new Date());
+						(d.head || d.body).appendChild(s);
+					})();
 				</script>
 				<noscript>
-					Please enable JavaScript to view the <a
-						href="https://disqus.com/?ref_noscript">comments powered by
+					Please enable JavaScript to view the
+					<a href="https://disqus.com/?ref_noscript">comments powered by
 						Disqus.</a>
 				</noscript>
 			</div>
 
 			<div class="article-detail__menu flex">
-				<a title="3강 Clean Code🙋‍♀🙋‍♂🙋"
+				<a title="3강 Clean Code🎙📚🧾📞📮☎"
 					href="article_detail_3.html"
 					class="hover-underline ">&lt;
-					이전글</a> <a href="article_list_JAVA_1.html"
+					이전글</a>
+				<a href="article_list_JAVA_1.html"
 					class="hover-underline ">목록</a>
 				<a title="5강 스레드(Thread)"
 					href="article_detail_5.html"
@@ -198,24 +383,52 @@ HTML, XML의 경우에는 일반적으로 2자리 띄어쓰기가 기본이다. 
 			</div>
 		</div>
 	</div>
-</section></main>
+</section>
 
-<footer class="bottom-bar con-min-width">
-	<div class="con flex flex-ai-c">
-		<a href="#" class="logo logo--mini flex flex-ai-c">
-			<i class="fab fa-jenkins"></i>
-			<span>
-				Develo<span>p</span>ers
-			</span>
-		</a>
-
-		<div class="bottom-bar__site-info">Lorem ipsum dolor sit amet
-			consectetur adipisicing elit. Dolorum eos ipsum necessitatibus
-			doloremque quos voluptate debitis earum aut a consequuntur explicabo
-			deleniti qui eius facere, harum error eveniet vel laudantium.</div>
-	</div>
-</footer>
+</main>
+    <footer>
+      <div class="footer_top">
+        <div class="container">
+          <div class="col-one-forth">
+            <h2 class="footer_logo"><a href=""></a></h2>
+            <p></p>
+            <a href=""><span><i class=""></i></span></a>
+          </div>
+          <div class="col-one-forth">
+            <h3></h3>
+            <ul>
+              <li></li>
+            </ul>
+          </div>
+          <div class="col-one-forth">
+            <h3></h3>
+            <ul>
+              <li></li>
+            </ul>
+          </div>
+          <div class="col-one-forth">
+            <h3></h3>
+            <ul>
+              <li><a href=""><img src="" alt=""></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer_bottom">
+        <div class="container clearfix">
+          <div class="footer_logo">
+            <a href=""></a>
+          </div>
+          <div class="copy">
+            <p>Copyright &copy; 2020 <span>Clean Code</span> <span class="devider">&#124;</span> <a href="">Privacy Policy</a> &#124;
+            <a href="">FAQ</a> <span class="devider">&#124;</span> <a href="">Support</a></p>
+          </div>
+          <div class="designer">
+            <p>Designed by <a href="">Ju Yeong</a> &#124; only on <a href="">Devloper's blog</a></p>
+          </div>
+        </div>
+      </div>
+    </footer>
 </div>
-<script src="app.js"></script>
 </body>
 </html>
